@@ -3,7 +3,6 @@ import logging
 
 logging.basicConfig(filename='wiz.log',level=logging.DEBUG)
 
-
 def main():
 	intro()
 	question = input("Ask the wizard one of your burning questions! (or type 'exit' to quit): ") 
@@ -51,3 +50,4 @@ def answerQuestion(question):
        print("That's a new one. I'll have to perform more research before I can provide an answer.")
        logging.info(f"Unanswered question: '{question}'")
 
+main()
