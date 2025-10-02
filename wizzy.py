@@ -59,6 +59,16 @@ def intro():
   print_slow("Across the lands it is known that the wizard has the means to answer any question, but has a deep hatred of so called 'questions of reason'.") 
 
 def answerQuestion():
+    yesNo = ['will','do','does','is','are','has','have']
+
+    responses = {"why": "Because.",
+                 "how": "Very Carefully.",
+                 "where": "In your butthole.",
+                 "what": "I don't know",
+                 "who": "well, everyone!",
+                 "when": "Tomorrow.",
+                 "yesno": ["It is decidedly so", "Maybe", "Possibly.", "I wouldn't count on it.", "There's a good chance.", "It's unlikely."],}
+
     #Loop to answer questions until 'exit' is entered
     while True:
      answered = True
@@ -71,35 +81,19 @@ def answerQuestion():
       break
      else:
       for word in question.split():
-			#print(f"Checking word: {word}") useful for debugging if needed
-			#figure out what kind of question is being asked, to provide an appropriate response
-       if word.lower() == 'why':
-        print_slow("Because.")
-        break
-       elif word.lower() == 'how':
-        print_slow("Very Carefully.")
-        break
-       elif word.lower() == 'where':
-        print_slow("In your butthole.")
-        break
-       elif word.lower() == 'what':
-        print_slow("I don't know, man.")
-        break
-       elif word.lower() == 'who':
-        print_slow("well, everyone!")
-        break
-       elif word.lower() == 'when':
-        print_slow("Tomorrow.")
-        break
-       elif word.lower() in ('will','do','does','is','are','has','have'):
-        print_slow("It is decidedly so")
-        break
-       else:
-        answered = False
-		#the answered variable comes into play here, and logs any questions that go unanswered.
+        #figure out what kind of question is being asked, to provide an appropriate response
+        if word.lower() in yesNo:
+          word = 'yesNo'
+        if word.lower() in responses:
+          print_slow(responses[word.lower()][random.randint(0, len(responses[word.lower()])-1)])
+          answered = True
+          break
+        else:
+          answered = False
+        #the answered variable comes into play here, and logs any questions that go unanswered.
       if not answered:
        print_slow("That's a new one. I'll have to perform more research before I can provide an answer.")
        logging.info(f"Unanswered question: '{question}'")
-       
+
 main()
 answerQuestion()
