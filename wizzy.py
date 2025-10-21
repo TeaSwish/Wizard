@@ -95,12 +95,12 @@ def respondToQuestions():
     elif answer == "speed":
         respondToQuestions()
         return
-    response = getAction(answer)
+    response = getAction(answer, question)
     slowPrint(response)
     respondToQuestions()
 
 
-def getAction(answer):
+def getAction(answer, question):
     global questionsAnswered
     actions = [
 f'''The wizard produces from his sleeve a small vial of pink liquid.
@@ -121,12 +121,9 @@ It tumbles down...
 The coin lands perfectly on the thin edge.
 "Hmm. I guess the fates are at lunch."'''
 ,
-'''The wizard pulls something wrapped in fabric out of a drawer.
-He sets the object on the counter between you, and unwraps it.
-You recognize it as a tarot deck.
-The wizard shuffles the deck, then deals one card face up...
-The Tower...
-"oooh, That's not good.'''
+'''"I think my fiancee's cousin's plumber's old college roommate would know this one."
+"What was his name again...? Hmm... Donny? Danny? Dolan? Duncan?..."
+"I can't quite recall. I'm sure he'll pop into my head later."'''
 ,
 f'''The wizard goes to a nearby chest, and from it retrieves a single egg.
 He cracks the egg over his counter, and peers intently at the contents.
@@ -197,6 +194,75 @@ It's... the wizard!?
 "Anywhoo... the answer to your question is..."
 The slumped wizard melts into the ground, and disappears completely
 "{answer}"'''
+,
+f'''"Well, certainly you know the answer to that one yourself!"
+The wizard glares at you for a moment.
+Suddenly, you realize that you DO know the answer to this one.
+But you could swear that you didn't know it before coming here...
+"{answer}"'''
+,
+f'''The wizard pulls a large book from a nearby shelf.
+He blows the dust off the cover, and opens it to a random page.
+He scans the page for a moment, then looks up at you.
+"Hmm. According to this, the answer is..."
+"{answer}"'''
+,
+f'''"Ah, yes! I remember now!"
+The wizard claps his hands together.
+He paces back and forth for a moment, then stops and looks at you.
+"The answer is..."
+"{answer}"'''
+,
+f'''The wizard pulls a small rectangular device from his robe.
+"Hey Siri, {question}"
+The device beeps, then speaks:
+"{answer}"'''
+,
+'''"42."'''
+,
+'''The wizard pulls something wrapped in fabric out of a drawer.
+He sets the object on the counter between you, and unwraps it.
+You recognize it as a tarot deck.
+The wizard shuffles the deck, then deals one card face up...
+The Tower...
+"oooh, That's not good.'''
+,
+f'''The wizard pulls a small black ball from his robe.
+He looks at it intently, then mumbles something under his breath.
+He gives the ball a shake, then stares into it.
+He looks up at you.
+"{answer}"'''
+,
+f'''"DESMOND!" The wizard shouts at the top of his lungs.
+The wizard quickly scrawls a note on a piece of parchment.
+He seals it with wax, and writes in big bold letters "TO DESMOND" on the outside.
+The wizard then tosses the note into a nearby fireplace.
+After a moment, a small raven flies in through the open window, carrying a similar note.
+The wizard takes the note from the raven, and reads it aloud:
+""{answer}", Love Desmond."
+"Lovely guy, despite the name."'''
+,
+'''[CENSORED FOR YOUR PROTECTION]'''
+,
+f'''"{answer}"
+...
+...
+...
+...
+...
+...
+...
+...
+...
+...
+...
+...
+...
+...
+"What, why are you staring at me?"
+"Is that not magical enough for you?"
+"Are you expecting me to do some elaborate ritual or something?"
+"I already knew this one, so that's that."'''
 ]
     if questionsAnswered >= len(actions):
         questionsAnswered = 0
