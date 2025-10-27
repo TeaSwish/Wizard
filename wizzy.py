@@ -10,7 +10,7 @@ def main():
     global questionsAnswered
     questionsAnswered = 0
     textSpeed("speed medium")  # default text speed
-    # intro()
+    intro()
 
 
 def textSpeed(question):
@@ -85,9 +85,9 @@ def respondToQuestions():
         "Ask the wizard one of your burning questions! (or type 'exit' to quit): "
     )
     #This is for debug purposes, to be removed later, like a devkit.
-    if question.split()[0] == 'debug':
-        if question.split()[1] == 'answer#':
-            questionsAnswered = int(question.split()[2])
+    #if question.split()[0] == 'debug':
+       # if question.split()[1] == 'answer#':
+         #   questionsAnswered = int(question.split()[2])
     answer = getAnswer(question)
     if answer == "Exiting.":
         slowPrint("Exiting...")
