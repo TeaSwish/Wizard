@@ -100,7 +100,7 @@ def respondToQuestions():
     respondToQuestions()
 
 
-def getAction(answer, question):
+def getAction(answer=None, question=None):
     global questionsAnswered
     actions = [
 f'''The wizard produces from his sleeve a small vial of pink liquid.
@@ -277,12 +277,12 @@ def getAnswer(question):
     yesNo = ["will", "do", "does", "is", "are", "has", "have", "was", "were"]
 
     responses = {
-        "why": ["It is what it is", "Because."],
-        "how": ["It is what it is", "Very carefully."],
-        "where": ["It is what it is", "In your butthole."],
-        "what": ["It is what it is", "I don't know"],
-        "who": ["It is what it is", "well, everyone!"],
-        "when": ["It is what it is", "Tomorrow."],
+        "why": ["It is what it is", "Because.", "For reasons beyond my understanding.", "That's how the world works!"],
+        "how": ["It is what it is", "Very carefully.", "With great effort.", "By magic."],
+        "where": ["It is where it is", "In your butthole.", "Somewhere over the rainbow.", "In a galaxy far, far away."],
+        "what": ["It is what it is", "I don't know", "Everything you need to know is within you.", "When you need to, you shall know."],
+        "who": ["It is what it is", "well, everyone!", "yo mama", "The butler.", "You!"],
+        "when": ["It is what it is", "Tomorrow.", "In due time.", "When the stars align.", "Yesterday."],
         "yesno": [
             "It is decidedly so",
             "Maybe",
@@ -291,6 +291,8 @@ def getAnswer(question):
             "There's a good chance.",
             "It's unlikely.",
             "It is what it is",
+            "Absolutely!",
+            "No way!"
         ],
     }
 
